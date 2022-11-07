@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Push Notification Demo</title>
+  <style>
+    li {
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 5px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+  </style>
+  <script src="./lib/axios.min.js"></script>
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <h1>Push Notification Demo</h1>
+  <h2>F12打开控制台之后执行以下步骤：</h2>
+  <ol>
+    <li>
+      <div>询问用户获得通知权限</div>
+      <button id="btnAskPermission">获取权限</button>
+    </li>
+    <li>
+      <div>订阅推送通知 <br> 这将创建一个【Push Server】的端点URL</div>
+      <button id="btnCreateSubscription">创建订阅</button>
+    </li>
+    <li>
+      <div>将用户订阅数据发送到【你的服务器】</div>
+      <button id="btnSendToYourServer">发送数据</button>
+    </li>
+    <li>
+      <div>向推送服务器请求通知 <br> （在生产环境中这个事件是由你的服务器自动向 Push Server 发送的）</div>
+      <button id="btnSendPushNotification">推送通知</button>
+    </li>
+  </ol>
+</body>
+
+</html>
