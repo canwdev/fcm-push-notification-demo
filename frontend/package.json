@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "live-server --port=3000"
+    "dev": "live-server --port=3000",
+    "start": "http-server -p 9012"
   }
 }

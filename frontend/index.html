@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Push Notification Demo</title>
+  <title>FCM Push Notification Demo</title>
   <style>
     li {
       line-height: 1.8;
@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <h1>Push Notification Demo</h1>
+  <h1>FCM Push Notification Demo</h1>
   <h2>F12打开控制台之后执行以下步骤：</h2>
   <ol>
     <li>
@@ -50,6 +50,14 @@
       <button id="btnSendPushNotification">推送通知</button>
     </li>
   </ol>
+
+  <hr>
+
+  <h2>其他</h2>
+  <ul>
+    <li>Service Worker 必须启用，并且只支持 localhost 和 https 环境</li>
+    <li>你还可以 <button id="btnCancelSubscription">取消订阅</button>，在浏览器取消订阅后将无法收到通知</li>
+  </ul>
 </body>
 
 </html>

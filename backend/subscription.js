@@ -23,25 +23,30 @@ const handleSubscription = (req, res) => {
 }
 
 const sendPushNotification = async (req, res) => {
-  const sid = req.params.id;
-  const pushSubscription = subscriptions[sid];
-  console.log('sending notification...', sid)
-  await webpush
-    .sendNotification(
-      pushSubscription,
-      JSON.stringify({
-        title: "Hello, world! Test Title.",
-        text: "You got a new message!",
-        image: "https://via.placeholder.com/200x200/E60033/FFFFFF/?text=NOTIFICATION",
-        tag: "Test Tag",
-        url: "https://bing.com"
-      })
-    )
-    .catch(err => {
-      console.log(err);
-    });
+  try {
 
-  res.status(202).json({});
+    const sid = req.params.id;
+    const pushSubscription = subscriptions[sid];
+    console.log('sending notification...', sid)
+    const pRes = await webpush
+      .sendNotification(
+        pushSubscription,
+        JSON.stringify({
+          title: "Hello, world! Test Title.",
+          text: "You got a new message!",
+          image: "https://via.placeholder.com/200x200/E60033/FFFFFF/?text=NOTIFICATION",
+          tag: "Test Tag",
+          url: "https://bing.com"
+        })
+      )
+
+    console.log(pRes)
+
+    res.status(202).json({});
+  } catch (e) {
+    console.error(e)
+    res.status(500).json(e)
+  }
 }
 
 module.exports = {

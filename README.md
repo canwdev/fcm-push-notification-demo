@@ -1,4 +1,4 @@
-# Push Notification Demo
+# FCM Push Notification Demo
 
 ![img](./screenshot.png)
 
